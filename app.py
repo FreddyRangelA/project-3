@@ -2,7 +2,7 @@
 from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
 from flask_pymongo.wrappers import Database
-import priceLive
+#import priceLive
 import sqlite3
 from flask import g
 
