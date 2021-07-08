@@ -48,7 +48,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index.html"><h1>Prices of crypto on real time</a>
+                              <a href="index.html"><h1>Sentimental Analisys</a>
                            </div>
                         </div>
                      </div>
@@ -64,10 +64,10 @@
                                  <a class="nav-link" href="#">Home</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="#">Real time Data</a>
+                                 <a class="nav-link" href="Data">Data</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="#reddit"> tweets</a>
+                                 <a class="nav-link" href="#Data">Data</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="#history">historical data</a>
@@ -85,17 +85,25 @@
       <!-- banner -->
       <section class="banner_main">
          <div class="container">
+            <h1 style="color: aliceblue;text-align: center; font-size: xx-large;">What is sentimental analysis?</h1>
+         </div>
+      </section>
+      <section class="banner_main">
+         <div class="container">
             <div class="row d_flex">
                <div class="col-md-5">
-                  <div class="text-bg">
+                  <figure style=" "><img src="static/images/whatIsSentimentalAnalyis.png" /></figure>
+                  <!--<div class="text-bg">
+
                      <!--<h1>Power ful<br> Web Hosting</h1>
                      <span>Landing Page 2019</span>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>-->
                      <!---<a href=" ">Get Started</a>-->
-                     <button id="coin" type="button" class="btn btn-primary active">Get Started</button>
+                     <!--<button id="coin" type="button" class="btn btn-primary active">Get Started</button>--->
 
-                     <div class="col-md-10">
+                     <!--<div class="col-md-20">
                         <div id="table-area" class="">
+                           <!--<figure style="max-width: 100%; height: auto; "><img src="static/images/whatIsSentimentalAnalyis.png" /></figure>-->
                           <!--<table id="ufo-table" class="table table-striped">
                             <thead>
                               <tr>
@@ -110,31 +118,42 @@
                             </thead>
                             <tbody></tbody>
                           </table>-->
-                          <div class="row">
-                           <div class="col-md-12">
-                             <div id="bubble"></div>
+                          <!--<div class="row">
+                              <div class="col-md-15">
+                                 <div id="bubble"></div>
+                              </div>
                            </div>
-                         </div>
                         </div>
-                      </div>
-                  </div>
+                     </div>
+                  </div>-->
                </div>
                <div class="col-md-7">
                   <div class="text-img">
+                     <h2 style="color: aliceblue;">Sentiment analysis is the use of natural 
+                        language in order to process:  text analysis, computational linguistics, 
+                        and biometrics to systematically identify, extract, quantify, and study subjects' 
+                        information from simple internet’s comments.
+                        <br><br>
+                        Sentimental analysis allows us to collect data from thousands 
+                        of comments in regards to one topic and analyze the overall inclination
+                        towards one side or the other, to understand whether the overall sentiment is negative, 
+                        positive or neutral. </h2>
                      <!--<figure><img src="static/images/img.png" /></figure>-->
-                  </div>
                </div>
             </div>
+            </div>
+            
+            
          </div>
       </section>
       <!-- end banner -->
       <!-- Hosting -->
-      <div id="reddit" class="hosting">
+      <div id="Data" class="hosting">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <h2>Redit reactions to Elon's Tweets</h2>
+                     <h2>Data and data colection</h2>
                   </div>
                </div>
             </div>
@@ -142,9 +161,42 @@
                <div class="col-md-12">
                   <div class="web_hosting">
                      <div id="elonDiv"></div>
-                     <div id="plot"></div>
-                     <p>People reactin to Elon's opining on crypto currency</p>
-                     <a href="#">Read more</a>
+                     <div id="plot">
+
+                     </div>
+                     <p>The internet is full of opinions, some of them are constructive, some of them not so much. 
+                        Therefore one good place to encounter as many and as polizied as possible was reddit.
+                        <br>
+                        <a href="https://praw.readthedocs.io/en/stable/getting_started/quick_start.html">Read more abour PRAW</a>
+                        <br>
+                        
+                        In order to collect the desired data  PRAW reddit wrapper was imported and implemented.
+                        This wrapper allows users to quickly scrap the needed data from reddit comments with just 
+                        a few simple parameters. 
+                        </p>
+                        
+                        <br>
+                        <figure><img src="static/images/praw.png"></figure>
+                        <p>From praw import PushshiftAPI. This parameter allows searching on the API for a specific parameter.
+                            This parameter would be define unde “q” for the main query, “subreddit”for more accuracy and
+                             finally “filter” </p>
+                        <figure><img src="static/images/praw2.png"></figure>
+                        <p>Next, the data is placed on a Pandas DataFrame.</p>
+                        <figure><img src="static/images/praw3.png"></figure>
+                        <p>
+                           The data went under minor clean up. Several columns were dropped, 
+                           time column was modified to show the correct time format and  the data selection 
+                           based on time was made from 2015 to 2021.
+                           <br>
+                           Finally, the data can be saved on a CSV file on any given path. After this, 
+                           more modifications can be made. A column named “Sentiment” was created and 
+                           given the values 1= positive comments, 2= negative comments, 0= null comments and 3= comments 
+                           needed to be removed.
+                        </p>
+                        <figure><img src="static/images/praw4.png"></figure>
+
+                        <div class='tableauPlaceholder' id='viz1625728055299' style='position: relative'><noscript><a href='#'><img alt='Trump ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Tr&#47;Trump_16257076860590&#47;Trump&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Trump_16257076860590&#47;Trump' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Tr&#47;Trump_16257076860590&#47;Trump&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1625728055299');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                     
                   </div>
                </div>
             </div>
