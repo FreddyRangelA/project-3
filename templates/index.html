@@ -83,7 +83,7 @@
       <!-- banner -->
       <section class="banner_main">
          <div class="container">
-            <h1 style="color: aliceblue;text-align: center; font-size: xx-large;">What is sentimental analysis?</h1>
+            <h1 style="color: aliceblue;text-align: center; font-size: xx-large;">What is sentiment analysis?</h1>
          </div>
       </section>
       <section class="banner_main">
@@ -163,20 +163,20 @@
 
                      </div>
                      <p>The internet is full of opinions, some of them are constructive, some of them not so much. 
-                        Therefore one good place to encounter as many and as polizied as possible was reddit.
+                        Therefore one good place to encounter as many and as politicized as possible was reddit.
                         <br>
-                        <a href="https://praw.readthedocs.io/en/stable/getting_started/quick_start.html">Read more abour PRAW</a>
+                        <a href="https://praw.readthedocs.io/en/stable/getting_started/quick_start.html">Read more about PSAW and PushshiftAPI</a>
                         <br>
                         
-                        In order to collect the desired data  PRAW reddit wrapper was imported and implemented.
+                        In order to collect the desired data, we used the PSAW reddit wrapper collected by PushshiftAPI that lets us get historical Reddit data updated often was imported and implemented.
                         This wrapper allows users to quickly scrap the needed data from reddit comments with just 
                         a few simple parameters. 
                         </p>
                         
                         <br>
                         <figure><img src="static/images/praw.png"></figure>
-                        <p>From praw import PushshiftAPI. This parameter allows searching on the API for a specific parameter.
-                            This parameter would be define unde “q” for the main query, “subreddit”for more accuracy and
+                        <p>From psaw import PushshiftAPI. This parameter allows searching on the API for a specific parameter.
+                            This parameter would be define under “q” for the main query, “subreddit” for more accuracy and
                              finally “filter” </p>
                         <figure><img src="static/images/praw2.png"></figure>
                         <p>Next, the data is placed on a Pandas DataFrame.</p>
@@ -188,7 +188,7 @@
                            <br>
                            Finally, the data can be saved on a CSV file on any given path. After this, 
                            more modifications can be made. A column named “Sentiment” was created and 
-                           given the values 1= positive comments, 2= negative comments, 0= null comments and 3= comments 
+                           given the values 1= positive posts, 2= negative posts, 0= null posts and 3= posts 
                            needed to be removed.
                         </p>
                         <figure><img src="static/images/praw4.png"></figure>
@@ -207,7 +207,7 @@
             <div class=" ">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <h2>Data Analisys and Model tryning</h2>
+                     <h2>Data Analysis and Trying</h2>
                      <p>Historical data showing for the past 3 months
                      </p>
                   </div>
