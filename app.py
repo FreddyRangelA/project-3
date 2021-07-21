@@ -36,15 +36,19 @@ app = Flask(__name__)
 def home():
 
     return render_template("index.html")
-    
+ #rout is created   
 @app.route("/predict/<inputstr>")
+#input by the user
 def predict(inputstr):
     print(inputstr)
+    #
     datalist=sentiment_df["title"].to_list()
-    
+    #append input to DF
     datalist.append(inputstr)
     print(datalist[-1])
+    #load CV model
     text_counts1= cv.transform(datalist)
+    #load model clf and get prediction
     predicted= clf.predict(text_counts1[-1])
     print(predicted)
     return str(predicted[0])
