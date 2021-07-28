@@ -15,29 +15,39 @@ function runEnter() {
     d3.json(`/predict/${inputstr}`).then(d => {
       console.log(d);
       if (d === 0) {
-        d=String("Neutral");
+        resolved=String("Neutral");
         //console.log("neutral");
         //console.log(`${d} is now neutral`);
 
       }
       else if (d===1){
-        d=String("Positive");
+        resolved=String("Positive");
         
       }else{
-        d=String("Negative");
+        resolved=String("Negative");
         
       }
 
-      d3.select("#result").text(`the model predicts that your comment is: ${d} of Trump`);
+      d3.select("#result").text(`the model predicts that your comment is: ${resolved} of Trump`);
       
       predictedResult = d;
   });
 }
 
 function correct() {
-  d3.select("div.parent").html("");
-  d3.select("#wrongAnswer").html("");
-  d3.select("table").html("");
+  var inputstr = d3.select("#comments").property("value");
+  fetch(`/adddata/${inputstr}/${predictedResult}`).then(d => {
+  console.log(d)
+    if (d.ok) {alert("Thanks for your feedback")} 
+    else {  alert("Oops!")}  
+  });
+  
+
+
+
+  // d3.select("div.parent").html("");
+  // d3.select("#wrongAnswer").html("");
+  // d3.select("table").html("");
   //d3.event.preventDefault();
   //var ans=["negative", "positive"] 
   //outcome = ans.indexOf(predictedResult)
@@ -52,7 +62,7 @@ function wrong() {
   
   d3.select("#wrongAnswer").html("");
   d3.select("table").html("");
-  d3.select("#wrongAnswer").text('Please indicate the corect sentiment.')
+  d3.select("#wrongAnswer").text('Please indicate the correct sentiment.')
   var sentimentSelection = ['Negative','Positive','Neutral'];
   var ul=d3.select('table').append('ul');
 

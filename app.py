@@ -52,9 +52,15 @@ def predict(inputstr):
     predicted= clf.predict(text_counts1[-1])
     print(predicted)
     return str(predicted[0])
-    
 
-    
+@app.route("/adddata/<inputstr>/<sentiment>")
+
+def adddata(inputstr,sentiment):
+    df = pd.read_csv("static/Data/Data_project-3 - Sheet1.csv", dtype={"title":"string"})  
+    df = df.append({"Sentiment":sentiment,"title":inputstr}, ignore_index=True)
+    df.to_csv("static/Data/Data_project-3 - Sheet1.csv", index=False)
+    return "Very Good"
+
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,6 +1,8 @@
 
-![1393447_1](https://user-images.githubusercontent.com/25973930/118744024-2d61a800-b819-11eb-86ce-bdd9a70723c4.jpg)
-# Project-2
+![1393447_1]
+# Project-3
 Scope:
   - Visualizations
-  - Data colection 
+  - Data Collection
+# Explanation  
+In this project, we took the header of Reddit posts from a user ran API that collects Reddit historical data called PushShiftAPI. We collected the data from r/PoliticalDiscussion with any mention of the name Trump. From there, we categorized the data (we only did about 1500) into 0= Neutral, 1= Positive, 2= Negative, and 3= Remove Data
